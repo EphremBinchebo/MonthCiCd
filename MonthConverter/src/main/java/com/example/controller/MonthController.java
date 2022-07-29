@@ -38,4 +38,35 @@ public class MonthController {
                 throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Invalid Month Number Specified");
         }
     }
-}
+        @RequestMapping(value="/monthAbbreviation/{monthNumber}", method=RequestMethod.GET)
+        @ResponseStatus(value = HttpStatus.OK)
+        public String getMonthAbbreviation(@PathVariable String monthNumber) {switch (monthNumber) {
+            case "1":
+                return "Jan";
+            case "2":
+                return "Feb";
+            case "3":
+                return "Mar";
+            case "4":
+                return "Apr";
+            case "5":
+                return "May";
+            case "6":
+                return "Jun";
+            case "7":
+                return "Jul";
+            case "8":
+                return "Aug";
+            case "9":
+                return "Sep";
+            case "10":
+                return "Oct";
+            case "11":
+                return "Nov";
+            case "12":
+                return "Dec";
+            default:
+                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Invalid Month Number Specified");
+        }}
+    }
+
